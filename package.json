@@ -1,0 +1,19 @@
+{
+  "name": "yt-project",
+  "version": "1.0.0",
+  "description": "It is a full-stack web app  based on MERN stack for video player as well as tweets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javascript",
+    "backend",
+    "node",
+    "express",
+    "mongo",
+    "mongoose"
+  ],
+  "author": "Malaika-Ali",
+  "license": "ISC"
+}
