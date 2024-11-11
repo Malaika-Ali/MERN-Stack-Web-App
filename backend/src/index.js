@@ -28,9 +28,24 @@
 
 import connectDB from "./database/index.js";
 import dotenv from'dotenv'
+import { app } from "./app.js";
 
 dotenv.config({
     path:   './env'
 })
 
-connectDB()
+// Since the connectDB method ddefined in the file is an asynchronous function and asynchronous functions return promises so we can .then() and .catch() methods on them.
+connectDB().then(()=>{
+    // this line tells the server to listen either on the port provided the deployment platform or on port 8000
+    app.listen(process.env.PORT || 8000, ()=>{
+        console.log(`Server is running at port number ${process.env.PORT}`)
+    })
+}).catch((error)=>{
+    console.log("Mongo DB Connection failed!!!!!!!!!", error)
+})
+
+
+
+
+// for debugging the database connection related error
+// console.log("checking env file", process.env.MONGODB_URI)
